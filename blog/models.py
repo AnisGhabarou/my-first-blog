@@ -11,8 +11,11 @@ class Post(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
 
     def publish(self):
-        self.published_date = timezone.now()
+        self.published_date = timezone.now()# automatically save and publish the post when created
         self.save()
 
     def __str__(self):
-        return self.title
+        return self.title #<QuerySet [<Post: Post object (1)>, <Post: Post object (2)>, <Post: Post object (3)>, <Post: Post object (4)>]> -
+                                                                                                                                           #|
+                                                                                                                                           #|
+                        #<QuerySet [<Post: first blog ever>, <Post: 2nd blog>, <Post: 3rd blog>, <Post: Sample title>]>
